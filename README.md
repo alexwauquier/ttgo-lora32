@@ -39,7 +39,9 @@ Ce projet montre comment utiliser la carte LoRa32 V2.1_1.6 pour se connecter à 
 
 Il peut servir de base pédagogique, d’exemple de projet LoRa ou de prototype pour une solution IoT plus complexe.
 
-> [!NOTE] Pourquoi utiliser PlatformIO plutôt qu'Arduino IDE ?
+> [!NOTE]
+> Pourquoi utiliser PlatformIO plutôt qu'Arduino IDE ?
+> 
 > PlatformIO simplifie la gestion des bibliothèques, centralise leur configuration dans le fichier `platformio.ini` et les télécharge automatiquement, ce qui facilite la mise en place du projet.
 
 ### :books: Bibliothèques utilisées
@@ -60,7 +62,7 @@ Les bibliothèques suivantes sont nécessaires au bon fonctionnement du projet :
 
 - **LoRaWAN** (LoRa Wide Area Network) est un protocole de communication réseau qui fonctionne par-dessus LoRa. Il définit la manière dont les appareils se connectent à des passerelles pour transmettre les données vers un réseau centralisé (Network Server), avec des mécanismes de sécurité, d’authentification et de gestion des données.
 
-> [!TIP] Conseil
+> [!TIP]
 > Pour une vue d’ensemble complète, vous pouvez consulter cette présentation de l’[architecture LoRaWAN](https://www.thethingsnetwork.org/docs/lorawan/architecture/), proposée par The Things Network.
 
 ### :toolbox: Prérequis
@@ -100,7 +102,9 @@ static const u1_t PROGMEM DEVEUI[8]  = { YOUR_DEVEUI };
 static const u1_t PROGMEM APPKEY[16] = { YOUR_APPKEY };
 ```
 
-> [!WARNING] Attention à l’ordre des octets
+> [!WARNING]
+> Attention à l’ordre des octets !
+> 
 > Les plateformes comme **The Things Network** (TTN) et **ChirpStack** affichent les identifiants (`AppEUI`, `DevEUI`, etc.) en **MSB** (Most Significant Byte first).
 > 
 > Cependant, la bibliothèque **LMIC** lit ces identifiants en **LSB** (*Least Significant Byte first*), c’est-à-dire du byte le moins significatif au plus significatif.  
@@ -147,7 +151,7 @@ build_flags =
 - `framework = arduino` : utilisation du framework Arduino
 - `monitor_speed = 115200` : vitesse du moniteur série (en bauds)
 
-> [!NOTE] Version TTGO LoRa32
+> [!NOTE]
 > Le nom officiel de la carte est **LoRa32 V2.1_1.6** mais elle porte l’inscription **T3_V1.6.1** sur le circuit imprimé.
 
 ### :gear: Détails des build_flags
